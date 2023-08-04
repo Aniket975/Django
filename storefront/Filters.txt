@@ -1,0 +1,17 @@
+Filter by q objects
+
+Filter by F objects
+F class is used to reference a field in table
+
+ query_set = Product.objects.filter(inventory = F('unit_price'))
+
+SELECT `store_product`.`id`,
+       `store_product`.`title`,
+       `store_product`.`slug`,
+       `store_product`.`description`,
+       `store_product`.`unit_price`,
+       `store_product`.`inventory`,
+       `store_product`.`last_update`,
+       `store_product`.`collection_id`
+  FROM `store_product`
+ WHERE `store_product`.`inventory` = (`store_product`.`unit_price`)
