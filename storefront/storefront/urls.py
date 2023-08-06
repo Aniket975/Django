@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 import debug_toolbar
 # hello
+admin.site.site_header="Kumhrar admin"
+admin.site.site_title="Aniket"
+admin.site.index_title="good Admin"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('playground/', include('playground.urls')),
